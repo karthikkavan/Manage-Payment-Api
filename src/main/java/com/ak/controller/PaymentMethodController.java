@@ -1,4 +1,4 @@
-package com.cg.controller;
+package com.ak.controller;
 
 import java.util.List;
 
@@ -10,14 +10,14 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.cg.entity.PaymentMethod;
-import com.cg.service.PaymentMethodServiceImpl;
+import com.ak.entity.PaymentMethod;
+import com.ak.service.PaymentMethodService;
 
 @RestController
 public class PaymentMethodController {
 	
 	@Autowired
-	private PaymentMethodServiceImpl service;
+	private PaymentMethodService service;
 
 	Logger logger=LoggerFactory.getLogger(PaymentMethodController.class);
 	   

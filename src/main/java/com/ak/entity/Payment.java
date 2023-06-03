@@ -1,41 +1,58 @@
-package com.cg.entity;
+package com.ak.entity;
 
-import java.math.BigDecimal;
 import java.util.Date;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity
+@Table(name="Payment_Tbl")
 public class Payment {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	private Long paymentId;
+	@Column(name = "id")
+	private Long id;
+	
+	@Column(name = "account_Id")
 	private Long accountId;
-	private String Name;
+	
+	@Column(name = "name")
+	private String name;
+	
+	@Column(name = "account_Number")
 	private Long accountNumber;
+	
+	@Column(name = "ifsc_Code")
 	private String ifscCode;
+	
+	@Column(name = "amount")
 	private Double amount;
+	
+	@Column(name = "date")
 	private Date date;
-	private boolean deleted;
+	
+	@Column(name = "status")
+	private boolean status;
 	
 	
-	public boolean isDeleted() {
-		return deleted;
+	public boolean isStatus() {
+		return status;
 	}
 	
 	
-	public void setDeleted(boolean deleted) {
-		this.deleted = deleted;
+	public void setStatus(boolean status) {
+		this.status = status;
 	}
 
-	public Long getPamentId() {
-		return paymentId;
+	public Long getId() {
+		return id;
 	}
-	public void setPamentId(Long pamentId) {
-		this.paymentId = pamentId;
+	public void setPamentId(Long id) {
+		this.id = id;
 	}
 	public Long getAccountId() {
 		return accountId;
@@ -44,10 +61,10 @@ public class Payment {
 		this.accountId = accountId;
 	}
 	public String getName() {
-		return Name;
+		return name;
 	}
 	public void setName(String name) {
-		Name = name;
+		this.name = name;
 	}
 	public Long getAccountNumber() {
 		return accountNumber;
@@ -73,12 +90,12 @@ public class Payment {
 	public void setDate(Date date) {
 		this.date = date;
 	}
-	public Payment(Long paymentId, Long accountId, String name, Long accountNumber, String ifscCode, Double amount,
+	public Payment(Long id, Long accountId, String name, Long accountNumber, String ifscCode, Double amount,
 			Date date) {
 		super();
-		this.paymentId = paymentId;
+		this.id = id;
 		this.accountId = accountId;
-		Name = name;
+		this.name = name;
 		this.accountNumber = accountNumber;
 		this.ifscCode = ifscCode;
 		this.amount = amount;
@@ -88,7 +105,7 @@ public class Payment {
 }
 	@Override
 	public String toString() {
-		return "Payment [pamentId=" + paymentId + ", accountId=" + accountId + ", Name=" + Name + ", accountNumber="
+		return "Payment [pamentId=" + id + ", accountId=" + accountId + ", Name=" + name + ", accountNumber="
 				+ accountNumber + ", ifscCode=" + ifscCode + ", amount=" + amount + ", date=" + date + "]";
 	}
 }

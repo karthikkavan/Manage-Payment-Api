@@ -1,4 +1,4 @@
-package com.cg.service;
+package com.ak.service;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.mockitoSession;
@@ -16,17 +16,18 @@ import org.mockito.MockitoAnnotations;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.auditing.CurrentDateTimeProvider;
 
-import com.cg.entity.Payment;
-import com.cg.repository.PaymentRepo;
+import com.ak.entity.Payment;
+import com.ak.repository.PaymentRepository;
+import com.ak.service.PaymentService;
 
 @SpringBootTest
-class PaymentServiceImplTest {
+class PaymentServiceTest {
 
 	@Mock
-	private PaymentRepo paymentRepo;
+	private PaymentRepository paymentRepo;
 	
 	@InjectMocks
-	private PaymentServiceImpl paymentService;
+	private PaymentService paymentService;
 
 	@BeforeEach
     public void setup() {
